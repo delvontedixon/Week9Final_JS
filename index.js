@@ -109,32 +109,33 @@ class Game {
     this.player1 = player1;
     this.player2 = player2;
     this.deck.createDeck();
-    console.log(this.deck.mainDeck);
     this.deck.shuffle();
     this.deck.deal();
     this.playHand();
   }
 
   playHand() {
-    console.log(`${this.player1} is player 1`);
-    console.log(`${this.player2} is player 2`);
-    console.log(`The game will now begin`);
+    console.log(
+      `${this.player1} is Player 1`
+    ); /*This concats the code so the right name is placed with the right player*/
+    console.log(`${this.player2} is Player 2`);
+    console.log(`\nStart Game`);
 
     while (
       this.deck.player1Cards.length !== 0 &&
       this.deck.player2Cards.length !== 0
     ) {
       this.player1Card = this.deck.player1Cards.pop();
-      console.log(`${this.player1}'s Card`, this.player1Card);
+      console.log(`\n${this.player1}'s Card`, this.player1Card);
       this.player2Card = this.deck.player2Cards.pop();
       console.log(`${this.player2}'s Card`, this.player2Card);
 
       if (this.player1Card.value > this.player2Card.value) {
         this.p1.playerScore++;
-        console.log(`${this.player1} wins this round`);
+        console.log(`${this.player1} wins this round!`);
       } else if (this.player1Card.value < this.player2Card.value) {
         this.p2.playerScore++;
-        console.log(`${this.player2} wins the round`);
+        console.log(`${this.player2} wins the round...`);
       } else {
         console.log(`Tie: No score received this round`);
       }
@@ -144,14 +145,14 @@ class Game {
     }
 
     if (this.p1.playerScore > this.p2.playerScore) {
-      console.log(`${this.player1} wins the game.`);
+      console.log(`${this.player1} wins the game!`);
     } else if (this.p1.playerScore < this.p2.playerScore) {
-      console.log(`${this.player2} wins the game.`);
+      console.log(`${this.player2} wins the game...`);
     } else {
-      console.log("Tie: No winner.");
+      console.log("Tie Score: No Points");
     }
   }
 }
 
 let myGame = new Game();
-myGame.startGame("Player1", "Player2");
+myGame.startGame("Delvonte", "Guest");
