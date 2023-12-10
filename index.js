@@ -129,7 +129,7 @@ class Game {
       console.log(`\n${this.player1}'s Card`, this.player1Card);
       this.player2Card = this.deck.player2Cards.pop();
       console.log(`${this.player2}'s Card`, this.player2Card);
-
+      /*This above logs out the two players names and the cards that were drawn*/
       if (this.player1Card.value > this.player2Card.value) {
         this.p1.playerScore++;
         console.log(`${this.player1} wins this round!`);
@@ -138,7 +138,7 @@ class Game {
         console.log(`${this.player2} wins the round...`);
       } else {
         console.log(`Tie: No score received this round`);
-      }
+      } /*This above is the functions that decide who wins the round based on the value and rank of the card they drew*/
       console.log(`${this.player1}'s Score:`, this.p1.showScore());
       console.log(`${this.player2}'s Score:`, this.p2.showScore());
       console.log(`Round Is Over`);
@@ -156,3 +156,4 @@ class Game {
 
 let myGame = new Game();
 myGame.startGame("Delvonte", "Guest");
+/*The two players in this game are myself and a guest*/
